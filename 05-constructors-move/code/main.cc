@@ -22,11 +22,13 @@ struct my_vector
     
     my_vector(const my_vector& rhs)
     {
-        // resize(rhs.size());
-        // for (std::size_t j = 0; j < rhs.size(); ++j)
-        // {
-        //     ptr[j] = rhs.ptr[j];
-        // }
+        ptr      = nullptr;
+        vec_size = 0;
+        resize(rhs.size());
+        for (std::size_t j = 0; j < rhs.size(); ++j)
+        {
+            ptr[j] = rhs.ptr[j];
+        }
     }
     
     my_vector& operator = (const my_vector& rhs)
